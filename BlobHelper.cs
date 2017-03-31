@@ -572,7 +572,7 @@ namespace AzureBlobStorage
         // Create or update a blob. 
         // Return true on success, false if not found, throw exception on error.
 
-        public bool PutBlob(string container, string blob, string content)
+        public bool PutBlob(string container, string blob, string content, string contentType)
         {
             return Retry<bool>(delegate ()
             {
@@ -582,7 +582,7 @@ namespace AzureBlobStorage
                 {
                     SortedList<string, string> headers = new SortedList<string, string>();
                     headers.Add("x-ms-blob-type", "BlockBlob");
-
+                    headers.Add("Content-Type", contentType);
                     response = CreateRESTRequest("PUT", container + "/" + blob, content, headers).GetResponse() as HttpWebResponse;
                     response.Close();
                     return true;
