@@ -248,10 +248,7 @@ namespace CFS.CRMtoAX
         {
 
             tracingObject.Trace("Inside: " + "SendPOSTRequestToRestAPI");
-            //var webAddr = "https://endpoint.scribesoft.com/v1/orgs/1725/requests/1897?accesstoken=20bd3d04-a02f-47f4-b09c-81b43ffed37e";
-            //var webAddr = "https://endpoint.scribesoft.com/v1/orgs/1725/requests/2080?accesstoken=20bd3d04-a02f-47f4-b09c-81b43ffed37e";
-            // var webAddr = "https://demoendpoint.scribeqa.net/v1/orgs/3718/requests/383?accesstoken=5eaa6452-ba58-4695-b397-2915c46bded0";
-            //webAddr = "https://endpoint.scribesoft.com/v1/orgs/1725/requests/2238?accesstoken=20bd3d04-a02f-47f4-b09c-81b43ffed37e";
+            
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(webAddr);
             httpWebRequest.KeepAlive = false;
             httpWebRequest.ContentType = "application/json; charset=utf-8";
